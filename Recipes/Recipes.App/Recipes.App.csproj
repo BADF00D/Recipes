@@ -11,4 +11,8 @@
     <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Recipes.Contracts\Recipes.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
