@@ -7,7 +7,12 @@ namespace Recipes.App
     {
         public void Configure(IApplicationBuilder app)
         {
-            app.UseOwin(x => x.UseNancy());
+            app.UseOwin(x => 
+                x.UseNancy(y => 
+                    System.Console.WriteLine("here")
+                    //y.Bootstrapper = new Bootstrapping.Bootstrapper()
+                )
+            );
         }
     }    
 }
