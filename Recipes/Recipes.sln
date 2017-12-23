@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.App", "Recipes.App\Recipes.App.csproj", "{3AF7D803-3F57-418A-8A7F-94407B51DC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.App", "Recipes.App\Recipes.App.csproj", "{3AF7D803-3F57-418A-8A7F-94407B51DC7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.Contracts", "Recipes.Contracts\Recipes.Contracts.csproj", "{E814F787-D856-4F71-8331-21F55EA1FABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.Contracts", "Recipes.Contracts\Recipes.Contracts.csproj", "{E814F787-D856-4F71-8331-21F55EA1FABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.App.Tests", "Recipes.App.Tests\Recipes.App.Tests.csproj", "{D1950F93-79B5-46BB-BAA6-961005C9D452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E814F787-D856-4F71-8331-21F55EA1FABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E814F787-D856-4F71-8331-21F55EA1FABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E814F787-D856-4F71-8331-21F55EA1FABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1950F93-79B5-46BB-BAA6-961005C9D452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1950F93-79B5-46BB-BAA6-961005C9D452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1950F93-79B5-46BB-BAA6-961005C9D452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1950F93-79B5-46BB-BAA6-961005C9D452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

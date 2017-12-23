@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Importing\RzwdeSpecs\Recipe1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Importing\RzwdeSpecs\Recipe1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="4.3.0" />
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Recipes.App\Recipes.App.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Collections">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.0.0\ref\netcoreapp2.0\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.0.0\ref\netcoreapp2.0\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

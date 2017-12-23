@@ -10,11 +10,20 @@
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.1" />
     <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
-    <PackageReference Include="Nancy.Bootstrappers.Windsor" Version="2.0.0-clinteastwood" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Recipes.Contracts\Recipes.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bootstrapping\" />
   </ItemGroup>
 
 </Project>
