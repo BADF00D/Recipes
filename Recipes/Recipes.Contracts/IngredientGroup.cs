@@ -3,9 +3,9 @@
     public class IngredientGroup
     {
         public string Name { get; }
-        public Ingredient[] Ingredients { get; }
+        public string[] Ingredients { get; }
 
-        public IngredientGroup(string name, Ingredient[] ingredients)
+        public IngredientGroup(string name, string[] ingredients)
         {
             Name = name;
             Ingredients = ingredients;

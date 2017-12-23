@@ -54,7 +54,7 @@ namespace Recipes.App.Tests.Importing.RzwdeSpecs
         {
             _recipe.IngredientGroups.Length.Should().Be(1);
 
-            _recipe.IngredientGroups[0].Name.Should().Be("Chreme");
+            _recipe.IngredientGroups[0].Name.Should().Be("CREME");
         }
 
         [TestMethod]
@@ -74,51 +74,37 @@ namespace Recipes.App.Tests.Importing.RzwdeSpecs
         [TestMethod]
         public void Should_ingredient_one_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[0].Amount.Should().Be(1);
-            _recipe.IngredientGroups[0].Ingredients[0].Name.Should().Be("Knoblauchzehe");
-            _recipe.IngredientGroups[0].Ingredients[0].Unit.Should().Be(Unit.Stk);
+            _recipe.IngredientGroups[0].Ingredients[0].Should().Be("1 Knoblauchzehe");
         }
         [TestMethod]
         public void Should_ingredient_two_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[1].Amount.Should().Be(7);
-            _recipe.IngredientGroups[0].Ingredients[1].Name.Should().Be("getrocknete Tomaten, (eingelegte)");
-            _recipe.IngredientGroups[0].Ingredients[1].Unit.Should().Be(Unit.Stk);
+            _recipe.IngredientGroups[0].Ingredients[1].Should().Be("7 getrocknete Tomaten, (eingelegte)");
         }
         [TestMethod]
         public void Should_ingredient_three_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[2].Amount.Should().Be(8);
-            _recipe.IngredientGroups[0].Ingredients[2].Name.Should().Be("güne Oliven");
-            _recipe.IngredientGroups[0].Ingredients[2].Unit.Should().Be(Unit.Stk);
+            _recipe.IngredientGroups[0].Ingredients[2].Should().Be("8 güne Oliven");
         }
         [TestMethod]
         public void Should_ingredient_four_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[3].Amount.Should().Be(200);
-            _recipe.IngredientGroups[0].Ingredients[3].Name.Should().Be("Fetakäse / Hirtenkäse");
-            _recipe.IngredientGroups[0].Ingredients[3].Unit.Should().Be(Unit.g);
+            _recipe.IngredientGroups[0].Ingredients[3].Should().Be("200 g Fetakäse / Hirtenkäse");
         }
         [TestMethod]
         public void Should_ingredient_five_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[4].Amount.Should().Be(100);
-            _recipe.IngredientGroups[0].Ingredients[4].Name.Should().Be("Frischkäse");
-            _recipe.IngredientGroups[0].Ingredients[4].Unit.Should().Be(Unit.g);
+            _recipe.IngredientGroups[0].Ingredients[4].Should().Be("100 g Frischkäse");
         }
         [TestMethod]
         public void Should_ingredient_six_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[5].Amount.Should().Be(50);
-            _recipe.IngredientGroups[0].Ingredients[5].Name.Should().Be("Ajvar");
-            _recipe.IngredientGroups[0].Ingredients[5].Unit.Should().Be(Unit.g);
+            _recipe.IngredientGroups[0].Ingredients[5].Should().Be("50 g Ajvar");;
         }
         [TestMethod]
         public void Should_ingredient_seven_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients[6].Amount.Should().Be(0);
-            _recipe.IngredientGroups[0].Ingredients[6].Name.Should().Be("Kräuter");
-            _recipe.IngredientGroups[0].Ingredients[6].Unit.Should().Be(Unit.none);
+            _recipe.IngredientGroups[0].Ingredients[6].Should().Be("Kräuter");
         }
     }
 
@@ -143,7 +129,7 @@ namespace Recipes.App.Tests.Importing.RzwdeSpecs
         [TestMethod]
         public void Name_should_be_correct()
         {
-            _recipe.Name.Should().Be("Tomaten Oliven Feta Creme");
+            _recipe.Name.Should().Be("Königsberger Klopse");
         }
 
         [TestMethod]
@@ -153,67 +139,47 @@ namespace Recipes.App.Tests.Importing.RzwdeSpecs
         }
 
         [TestMethod]
-        public void There_should_be_7_Ingredients()
+        public void IngredientGroup_one_should_be_correct()
         {
-            _recipe.IngredientGroups[0].Ingredients.Length.Should().Be(7);
+            _recipe.IngredientGroups[0].Name.Should().Be("Klopse");
+            _recipe.IngredientGroups[0].Ingredients.Should().ContainInOrder(
+                "40 g Paniermehl, selbstgemacht",
+                "110 g Zwiebeln, geviertelt",
+                "1 Stück Ei, M",
+                "1 gehäufter Teelöffel Salz",
+                "1 gestrichener Teelöffel Pfeffer, schwarz, gemahlen",
+                "600 g Hack, gemischt",
+                "600 g Kartoffeln, Stücke",
+                "800 g Wasser",
+                "1 Päckchen Kn*** Boullion Huhn");
+        }
+
+        [TestMethod]
+        public void IngredientGroup_two_should_be_correct()
+        {
+            _recipe.IngredientGroups[1].Name.Should().Be("Soße");
+            _recipe.IngredientGroups[1].Ingredients.Should().ContainInOrder(
+                "500 g Brühe, vom Klopse garen",
+                "200 g Kochsahne, 15% Fett",
+                "55 g Mehl",
+                "10 g Kapernwasser",
+                "0,25 TL Salz, vorsichtig, denn das Kapernwasser ist salzig",
+                "0,5 TL Peffer, gemahlen",
+                "40 g Kapern, abgetropft");
         }
 
         [TestMethod]
         public void Should_PreviewPath_be_correct()
         {
             _recipe.PreviewPath.Should()
-                .Be(
-                    @"https://de.rc-cdn.community.thermomix.com/recipeimage/cf40qq28-8b280-143865-cfcd2-hh3stpuw/77165eb8-f1cd-4d09-a321-77dedd1c45c0/main/tomaten-oliven-feta-creme.jpg");
+                .Be(@"https://de.rc-cdn.community.thermomix.com/recipeimage/gezg3p9y-dd7cf-263159-cfcd2-3hpmf9v8/2af4d6a6-96a3-4f1e-a695-96f672da22d4/main/koenigsberger-klopse.jpg");
         }
 
         [TestMethod]
-        public void Should_ingredient_one_be_correct()
+        public void There_should_be_two_IngredientsGroups()
         {
-            _recipe.IngredientGroups[0].Ingredients[0].Amount.Should().Be(1);
-            _recipe.IngredientGroups[0].Ingredients[0].Name.Should().Be("Knoblauchzehe");
-            _recipe.IngredientGroups[0].Ingredients[0].Unit.Should().Be(Unit.Stk);
+            _recipe.IngredientGroups.Length.Should().Be(2);
         }
-        [TestMethod]
-        public void Should_ingredient_two_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[1].Amount.Should().Be(7);
-            _recipe.IngredientGroups[0].Ingredients[1].Name.Should().Be("getrocknete Tomaten, (eingelegte)");
-            _recipe.IngredientGroups[0].Ingredients[1].Unit.Should().Be(Unit.Stk);
-        }
-        [TestMethod]
-        public void Should_ingredient_three_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[2].Amount.Should().Be(8);
-            _recipe.IngredientGroups[0].Ingredients[2].Name.Should().Be("güne Oliven");
-            _recipe.IngredientGroups[0].Ingredients[2].Unit.Should().Be(Unit.Stk);
-        }
-        [TestMethod]
-        public void Should_ingredient_four_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[3].Amount.Should().Be(200);
-            _recipe.IngredientGroups[0].Ingredients[3].Name.Should().Be("Fetakäse / Hirtenkäse");
-            _recipe.IngredientGroups[0].Ingredients[3].Unit.Should().Be(Unit.g);
-        }
-        [TestMethod]
-        public void Should_ingredient_five_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[4].Amount.Should().Be(100);
-            _recipe.IngredientGroups[0].Ingredients[4].Name.Should().Be("Frischkäse");
-            _recipe.IngredientGroups[0].Ingredients[4].Unit.Should().Be(Unit.g);
-        }
-        [TestMethod]
-        public void Should_ingredient_six_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[5].Amount.Should().Be(50);
-            _recipe.IngredientGroups[0].Ingredients[5].Name.Should().Be("Ajvar");
-            _recipe.IngredientGroups[0].Ingredients[5].Unit.Should().Be(Unit.g);
-        }
-        [TestMethod]
-        public void Should_ingredient_seven_be_correct()
-        {
-            _recipe.IngredientGroups[0].Ingredients[6].Amount.Should().Be(0);
-            _recipe.IngredientGroups[0].Ingredients[6].Name.Should().Be("Kräuter");
-            _recipe.IngredientGroups[0].Ingredients[6].Unit.Should().Be(Unit.none);
-        }
+
     }
 }
