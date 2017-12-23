@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Importing\RzwdeSpecs\Recipe1.txt" />
+    <None Remove="Importing\RzwdeSpecs\RecipeWithMultipleIngredientGroups.txt" />
+    <None Remove="Importing\RzwdeSpecs\SimpleRecipe.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Importing\RzwdeSpecs\Recipe1.txt" />
+    <EmbeddedResource Include="Importing\RzwdeSpecs\RecipeWithMultipleIngredientGroups.txt" />
+    <EmbeddedResource Include="Importing\RzwdeSpecs\SimpleRecipe.txt" />
   </ItemGroup>
 
   <ItemGroup>

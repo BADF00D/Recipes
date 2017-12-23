@@ -1,11 +1,11 @@
 ﻿namespace Recipes.Contracts
 {
-    public class Ingedient
+    public class Ingredient
     {
         public double Amount { get; }
         public Unit Unit { get; }
         public string Name { get; }
-        public Ingedient(string name, double amount, Unit unit = Unit.none)
+        public Ingredient(string name, double amount, Unit unit = Unit.none)
         {
             Amount = amount;
             Unit = unit;

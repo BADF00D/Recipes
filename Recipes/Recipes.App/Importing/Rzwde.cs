@@ -33,21 +33,35 @@ namespace Recipes.App.Importing
                 {
                     if (parts.Length == 3)
                     {
-                        return new Ingedient(parts[1].Trim().RemoveMoreThenOneSpace(), 0);
+                        return new Ingredient(parts[1].Trim().RemoveMoreThenOneSpace(), 0);
                     }
                     if (parts.Length == 4)
                     {
-                        return new Ingedient(parts[2].Trim().RemoveMoreThenOneSpace(), double.Parse(parts[1]), Unit.Stk);
+                        return new Ingredient(parts[2].Trim().RemoveMoreThenOneSpace(), double.Parse(parts[1]), Unit.Stk);
                     }
                     if (parts.Length == 5)
                     {
-                        return new Ingedient(parts[3].Trim().RemoveMoreThenOneSpace(), double.Parse(parts[1]), Enum.Parse<Unit>(parts[2]));
+                        return new Ingredient(parts[3].Trim().RemoveMoreThenOneSpace(), double.Parse(parts[1]), Parse(parts[2]));
                     }
                     throw new ArgumentException();
                 })
                 .ToArray();
             
-            return new Recipe(name, null, ingredientMatches, preview);
+            return new Recipe(name, url, new[]{new IngredientGroup("???", ingredientMatches), }, preview);
+        }
+
+        private static Unit Parse(string value)
+        {
+            value = value.Trim();
+            if (Enum.TryParse(value, out Unit result))
+            {
+                return result;
+            }
+
+            if (value == "Stück") return Unit.Stk;
+            if (value == "gestrichener Teelöffel") return Unit.TL;
+
+            throw new Exception("Unkown value: "+value);
         }
     }
 
